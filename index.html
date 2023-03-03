@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="stylesheet.css" />
+        <title>CREATIVE AGENCY</title>
+        <meta name="viewport" content="width=device_device_width, initial-scale=1" />
+        <script>
+            function envoiMsg() {
+                alert("Votre message a bien été envoyé");
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div>
+                    <img id="menu" src="./images/texture.png" alt="Menu" />
+                    <span>MENU</span>
+                </div>
+                <ul>
+                    <li><a href="index.html">AGENCY</a></li>
+                    <li><a href="#">WHO ARE WE?</a></li>
+                    <li><a href="#">WORK</a></li>
+                    <li><a href="index.html"><img id="logo" src="./images/logo.svg" alt="Logo"/></a></li>
+                    <li><a href="#">TEAM</a></li>
+                    <li><a href="#localisaation">LOCALISATION</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id = "contact">
+                <h2>HOW TO CONTACT US</h2>
+                <p>rem ipsum dolor sit amet consectetur adispiscing elit, sed do eius- mod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostru</p>
+                <img id="telephone" src="./images/phone.svg" alt="Icone de téléphone"/>
+                <span>05 59 20 90 50</span>
+            </section>
+            <section id = "localisation">
+                <article>
+                    <h2> HOW TO FIND US</h2>
+                    <p>rem ipsum dolor sit amet consectetur adispiscing elit, sed do eius- mod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostru</p>
+    
+                    <span>55 AVENUE DE L'AQUITAINE<br>64100 BAYONNE</span>
+                </article>
+                <article>
+                    <img id="loc" src="./images/localisation.jpg" alt="Image localisation"/>                    
+                    <!--<img id="marker" src="./images/marker.svg" alt="Marker"/> Pin de la google map-->
+                </article>
+            </section>
+            <section>
+                <img class="imgSlider" src="./images/photo1.jpg" alt="Photo1"/>
+                <img class="imgSlider" src="./images/photo2.jpg" alt="Photo2"/>
+                <img class="imgSlider" src="./images/photo3.jpg" alt="Photo3"/>
+                <!--https://swiperjs.com/ => Pour faire le slider avec les 3 images-->
+                <!--https://fancyapps.com/docs/ui/fancybox/ => Pour afficher les images du slider zoomées-->
+                <!--<img id="map" src="./images/chevron.svg" alt="Chevron"/> contenu dans les boutons-->
+            </section>
+            <form>
+                <div>
+                    <h2>DROP US A LIGNE</h2>
+                    <p>Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div>
+                    <label for="country">Choose your country *</label>
+                    <!--https://restcountries.com/ => API pour l'affichage des pays dans la liste déroulante-->
+                    <label for="name">Name *</label>
+                    <!--https://atomiks.github.io/tippyjs/ => Pour le Tooltip sur les champs du formulaire-->
+                    <label for="email">Mail address *</label>
+                    <!--https://atomiks.github.io/tippyjs/ => Pour le Tooltip sur les champs du formulaire-->
+                    <label for="message">Message *</label>
+                    <!--https://atomiks.github.io/tippyjs/ => Pour le Tooltip sur les champs du formulaire-->
+                    <button onclick="envoiMsg()">SEND</button>
+                </div>
+            </form>
+        </main>
+    </body>
+
+</html>
