@@ -5,6 +5,12 @@
         <link rel="stylesheet" href="stylesheet.css" />
         <title>CREATIVE AGENCY</title>
         <meta name="viewport" content="width=device_device_width, initial-scale=1" />
+
+        <!-- SLIDER-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+        <!-- JS -->
         <script>
             function envoiMsg() {
                 alert("Votre message a bien été envoyé");
@@ -14,10 +20,11 @@
     <body>
         <header>
             <nav>
-                <div>
-                    <img id="menu" src="./images/texture.png" alt="Menu" />
+                <!-- Responsivité mobile -->
+                <!-- Trouver Icône menu 3 barres horizontales-->
+                <!--<div>
                     <span>MENU</span>
-                </div>
+                </div>-->
                 <ul>
                     <li><a href="index.html">AGENCY</a></li>
                     <li><a href="#">WHO ARE WE?</a></li>
@@ -28,6 +35,7 @@
                     <li><a href="#contact">CONTACT</a></li>
                 </ul>
             </nav>
+            <img id="banniere" src="./images/texture.png" alt="banniere" />
         </header>
         <main>
             <section id = "contact">
@@ -45,13 +53,35 @@
                 </article>
                 <article>
                     <img id="loc" src="./images/localisation.jpg" alt="Image localisation"/>                    
-                    <!--<img id="marker" src="./images/marker.svg" alt="Marker"/> Pin de la google map-->
+                    <img id="marker" src="./images/marker.svg" alt="Marker"/>
                 </article>
             </section>
-            <section>
-                <img class="imgSlider" src="./images/photo1.jpg" alt="Photo1"/>
-                <img class="imgSlider" src="./images/photo2.jpg" alt="Photo2"/>
-                <img class="imgSlider" src="./images/photo3.jpg" alt="Photo3"/>
+
+            <section class="swiper">
+                <div class="swiper-wrapper">
+                    
+                    <div class="swiper-slide">
+                        <img class="imgSlider" src="./images/photo1.jpg" alt="Photo1"/>
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="imgSlider" src="./images/photo2.jpg" alt="Photo2"/>
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="imgSlider" src="./images/photo3.jpg" alt="Photo3"/>
+                    </div>
+                    <!--<div class="swiper-slide" style="background-image:url(./images/photo1.jpg)"></div>
+                    <div class="swiper-slide" style="background-image:url(./images/photo2.jpg)"></div>
+                    <div class="swiper-slide" style="background-image:url(./images/photo3.jpg)"></div>-->
+                </div>
+                <div class="swiper-pagination"></div>
+                <!-- If we need navigation buttons -->
+                <div class="swiper-avant">
+                    <img id="chevronGauche" src="./images/chevron.svg" alt="Chevron"/>
+                </div>
+                <div class="swiper-apres">
+                    <img id="chevronDroite" src="./images/chevron.svg" alt="Chevron"/>
+                </div>
+
                 <!--https://swiperjs.com/ => Pour faire le slider avec les 3 images-->
                 <!--https://fancyapps.com/docs/ui/fancybox/ => Pour afficher les images du slider zoomées-->
                 <!--<img id="map" src="./images/chevron.svg" alt="Chevron"/> contenu dans les boutons-->
@@ -61,19 +91,106 @@
                     <h2>DROP US A LIGNE</h2>
                     <p>Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
-                <div>
-                    <label for="country">Choose your country *</label>
-                    <!--https://restcountries.com/ => API pour l'affichage des pays dans la liste déroulante-->
-                    <label for="name">Name *</label>
-                    <!--https://atomiks.github.io/tippyjs/ => Pour le Tooltip sur les champs du formulaire-->
-                    <label for="email">Mail address *</label>
-                    <!--https://atomiks.github.io/tippyjs/ => Pour le Tooltip sur les champs du formulaire-->
-                    <label for="message">Message *</label>
-                    <!--https://atomiks.github.io/tippyjs/ => Pour le Tooltip sur les champs du formulaire-->
+                <div id ="questionForms">
+                    <label for="countries">Choose your country *</label> <br>
+                    <select id="countries" name="countries" id="countries"></select> <br>
+
+                    <label for="name">Name *</label> <br>
+                    <input type="text" id="name" name="name" placeholder="John Doe"> <br>
+
+                    <label for="email">Mail address *</label> <br>
+                    <input type="email" id="email" name="email" placeholder="jogndoe@gmail.com"> <br>
+
+                    <label for="message">Message *</label> <br>
+                    <input type="text" id="message" name="message" placeholder="Drop us a line"> <br>
+
                     <button onclick="envoiMsg()">SEND</button>
                 </div>
             </form>
         </main>
+        <!--PLUGINS-->
+
+        <!-- Inportation du plugin Tippy.js pour les bulles au dessus des formulaires-->
+        <!-- Development -->
+        <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+        <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+        <!-- Production -->
+        <script src="https://unpkg.com/@popperjs/core@2"></script>
+        <script src="https://unpkg.com/tippy.js@6"></script>
+        <script>
+            tippy('#name', {
+                content: 'Fill with your name',
+            });
+            tippy('#email', {
+                content: 'Fill with your email',
+            });
+            tippy('#message', {
+                content: 'Fill with your message',
+            });
+        </script>
+        
+
+        <!-- Slider -->
+        <script>
+            const swiper = new Swiper('.swiper', {
+                // Optional parameters
+                direction: 'horizontal',
+                loop: true,
+                slidesPerView: 1,
+                centeredSlides: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-avant',
+                    prevEl: '.swiper-apres',
+                },
+            });
+                
+            
+        </script>
+
+        <!-- API restcountries pour affichage des pays-->
+        <script>
+            const xhttp = new XMLHttpRequest();
+            const select = document.getElementById("countries");
+        
+            let countries;
+        
+            xhttp.onreadystatechange = function() {
+            console.log('this.status', this.status);
+            if (this.readyState == 4 && this.status == 200) {
+                countries = JSON.parse(xhttp.responseText);
+                countries.sort((a, b) => a.name.common.localeCompare(b.name.common)); // tri par ordre alphabétique
+                assignValues();
+                handleCountryChange();
+            }
+            };
+            xhttp.open("GET", "https://restcountries.com/v3.1/all", true);
+            xhttp.send();
+        
+            function assignValues() {
+            countries.forEach(country => {
+                const option = document.createElement("option");
+                option.value = country.cioc;
+                option.textContent = country.name.common;
+                select.appendChild(option);
+            });
+            }
+        
+            function handleCountryChange() {
+            const countryData = countries.find(
+                country => select.value === country.alpha2Code
+            );
+            flag.style.backgroundImage = `url(${countryData.flag})`;
+            }
+        
+            select.addEventListener("change", handleCountryChange.bind(this));
+        </script>
+  
+  
+
     </body>
 
 </html>

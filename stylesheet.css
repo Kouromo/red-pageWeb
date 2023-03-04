@@ -3,6 +3,26 @@
     padding: 0;
 }
 
+/*Importation des polices depuis le dossier "polices" */
+@font-face {
+    font-family: 'Permanent Marker';
+    src: url(./polices/PermanentMarker.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(./polices/Roboto-Regular.ttf) format('truetype');
+}
+
+
+h2{
+    font-family: 'Permanent Marker';
+}
+
+p{
+    font-family: 'Roboto';
+}
+
 /*
 Police Titre : Permanent Marker
 Police Texte : Roboto
@@ -10,3 +30,34 @@ Police Texte : Roboto
 Couleur 1 : #ed1e79
 Couleur 2 : #6d0063
 */
+
+.swiper {
+    width: 20%;
+    height: auto;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+
+#chevronDroite {
+    transform: rotate(180deg);
+}
+
+img{
+    width: 200px;
+    height: auto;
+}
+
+
+#countries {
+    width: 90%;
+    max-width: 400px;
+  }
