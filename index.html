@@ -15,11 +15,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
 
         <!-- JS -->
-        <script>
-            function envoiMsg() {
-                alert("Votre message a bien été envoyé");
-            }
-        </script>
+        <script src="script.js"></script>
     </head>
     <body>
         <header>
@@ -55,8 +51,7 @@
     
                     <span>55 AVENUE DE L'AQUITAINE<br>64100 BAYONNE</span>
                 </article>
-                <article>                    
-                    <img id="marker" src="images/marker.svg" alt="Marker"/>
+                <article id="map">
                 </article>
             </section>
 
@@ -123,6 +118,9 @@
         <!-- Production -->
         <script src="https://unpkg.com/@popperjs/core@2"></script>
         <script src="https://unpkg.com/tippy.js@6"></script>
+
+        <script src="postBodyScript.js"></script>;
+        
         <script>
             tippy('#name', {
                 content: 'Fill with your name',
@@ -134,7 +132,33 @@
                 content: 'Fill with your message',
             });
         </script>
-        
+
+        <!-- Google maps-->
+        <script>
+            function initMap() {
+                const selector = document.getElementById("map")
+                const center = { lat:43.4867854, lng: -1.4641213 }
+                const options = {
+                    center: center,
+                    zoom : 17,
+                }
+                var myLatLng = {lat:43.4867854, lng: -1.4641213};
+                const map = new google.maps.Map(selector, options);
+                var marker = new google.maps.Marker({
+                    position: myLatLng,
+                    title: "Web Agency",
+                    map: map,
+                    icon: {
+                        url: 'images/marker.svg',
+                        scaledSize: new google.maps.Size(50, 50),
+                    }
+                });                
+            }
+        </script>
+
+        <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1I6BUf-xgodgftLv2kYAWQlJpN9PEE_o&callback=initMap">
+        </script>
 
         <!-- Slider -->
         <script>
@@ -154,79 +178,6 @@
                 },
             });
 
-        </script>
-
-        <!-- fancyapps pour afficher les images du slider zooméés-->
-        <script>
-            // Zooms
-            function zoomImage1(){
-                Fancybox.show([
-                    {
-                        src  : 'images/photo1.jpg',
-                        thumb   : 'images/photo1.jpg'
-
-                    },
-                    {
-                        src  : 'images/photo2.jpg',
-                        thumb   : 'images/photo2.jpg'
-                    },
-                    {
-                        src  : 'images/photo3.jpg',
-                        thumb   : 'images/photo3.jpg'
-                    }
-                ], {
-                    loop : true,
-                    thumbs : {
-                        autoStart : true
-                    }
-                });
-            }
-
-            function zoomImage2(){
-                Fancybox.show([
-                    {
-                        src  : 'images/photo2.jpg',
-                        thumb   : 'images/photo2.jpg'
-                    },
-                    {
-                        src  : 'images/photo3.jpg',
-                        thumb   : 'images/photo3.jpg'
-                    },
-                    {
-                        src  : 'images/photo1.jpg',
-                        thumb   : 'images/photo1.jpg'
-                    }
-                ], {
-                    loop : true,
-                    thumbs : {
-                        autoStart : true
-                    }
-                });
-            }
-
-            function zoomImage3(){
-                Fancybox.show([
-                    {
-                        src  : 'images/photo3.jpg',
-                        thumb   : 'images/photo3.jpg'
-                    },
-                    {
-                        src  : 'images/photo1.jpg',
-                        thumb   : 'images/photo1.jpg'
-                    },
-                    {
-                        src  : 'images/photo2.jpg',
-                        thumb   : 'images/photo2.jpg'
-                    }
-                ], {
-                    loop : true,
-                    thumbs : {
-                        autoStart : true
-
-                    }
-                });
-            }
-            
         </script>
 
         <!-- API restcountries pour affichage des pays-->
