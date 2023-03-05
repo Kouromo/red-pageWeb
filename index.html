@@ -35,7 +35,7 @@
                     <li><a href="#">WORK</a></li>
                     <li><a href="index.html"><img id="logo" src="images/logo.svg" alt="Logo"/></a></li>
                     <li><a href="#">TEAM</a></li>
-                    <li><a href="#localisaation">LOCALISATION</a></li>
+                    <li><a href="#localisation">LOCALISATION</a></li>
                     <li><a href="#contact">CONTACT</a></li>
                 </ul>
             </nav>
@@ -55,8 +55,7 @@
     
                     <span>55 AVENUE DE L'AQUITAINE<br>64100 BAYONNE</span>
                 </article>
-                <article>
-                    <img id="loc" src="images/localisation.jpg" alt="Image localisation"/>                    
+                <article>                    
                     <img id="marker" src="images/marker.svg" alt="Marker"/>
                 </article>
             </section>
@@ -65,17 +64,17 @@
                 <div class="swiper-wrapper">
                     
                     <div class="swiper-slide">
-                        <a data-fancybox="gallery" data-src="images/photo1.jpg">
+                        <a onclick="zoomImage1()" data-fancybox="gallery" data-src="images/photo1.jpg">
                             <img class="imgSlider" src="images/photo1.jpg" alt="Photo1"/>
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a data-fancybox="gallery" data-src="images/photo2.jpg">
+                        <a onclick="zoomImage2()" data-fancybox="gallery" data-src="images/photo2.jpg">
                             <img class="imgSlider" src="images/photo2.jpg" alt="Photo2"/>
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a data-fancybox="gallery" data-src="images/photo3.jpg">
+                        <a onclick="zoomImage3()" data-fancybox="gallery" data-src="images/photo3.jpg">
                             <img class="imgSlider" src="images/photo3.jpg" alt="Photo3"/>
                         </a>
                     </div>
@@ -150,8 +149,8 @@
                     clickable: true,
                 },
                 navigation: {
-                    nextEl: '.swiper-avant',
-                    prevEl: '.swiper-apres',
+                    nextEl: '.swiper-apres',
+                    prevEl: '.swiper-avant',
                 },
             });
 
@@ -159,8 +158,74 @@
 
         <!-- fancyapps pour afficher les images du slider zooméés-->
         <script>
-            // Image gallery with thumbnails
+            // Zooms
+            function zoomImage1(){
+                Fancybox.show([
+                    {
+                        src  : 'images/photo1.jpg',
+                        thumb   : 'images/photo1.jpg'
 
+                    },
+                    {
+                        src  : 'images/photo2.jpg',
+                        thumb   : 'images/photo2.jpg'
+                    },
+                    {
+                        src  : 'images/photo3.jpg',
+                        thumb   : 'images/photo3.jpg'
+                    }
+                ], {
+                    loop : true,
+                    thumbs : {
+                        autoStart : true
+                    }
+                });
+            }
+
+            function zoomImage2(){
+                Fancybox.show([
+                    {
+                        src  : 'images/photo2.jpg',
+                        thumb   : 'images/photo2.jpg'
+                    },
+                    {
+                        src  : 'images/photo3.jpg',
+                        thumb   : 'images/photo3.jpg'
+                    },
+                    {
+                        src  : 'images/photo1.jpg',
+                        thumb   : 'images/photo1.jpg'
+                    }
+                ], {
+                    loop : true,
+                    thumbs : {
+                        autoStart : true
+                    }
+                });
+            }
+
+            function zoomImage3(){
+                Fancybox.show([
+                    {
+                        src  : 'images/photo3.jpg',
+                        thumb   : 'images/photo3.jpg'
+                    },
+                    {
+                        src  : 'images/photo1.jpg',
+                        thumb   : 'images/photo1.jpg'
+                    },
+                    {
+                        src  : 'images/photo2.jpg',
+                        thumb   : 'images/photo2.jpg'
+                    }
+                ], {
+                    loop : true,
+                    thumbs : {
+                        autoStart : true
+
+                    }
+                });
+            }
             
         </script>
 
