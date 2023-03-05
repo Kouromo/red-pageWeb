@@ -10,6 +10,10 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
         <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
+        <!-- IMAGES SLIDER ZOOMÉES-->
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+
         <!-- JS -->
         <script>
             function envoiMsg() {
@@ -29,7 +33,7 @@
                     <li><a href="index.html">AGENCY</a></li>
                     <li><a href="#">WHO ARE WE?</a></li>
                     <li><a href="#">WORK</a></li>
-                    <li><a href="index.html"><img id="logo" src="./images/logo.svg" alt="Logo"/></a></li>
+                    <li><a href="index.html"><img id="logo" src="images/logo.svg" alt="Logo"/></a></li>
                     <li><a href="#">TEAM</a></li>
                     <li><a href="#localisaation">LOCALISATION</a></li>
                     <li><a href="#contact">CONTACT</a></li>
@@ -41,7 +45,7 @@
             <section id = "contact">
                 <h2>HOW TO CONTACT US</h2>
                 <p>rem ipsum dolor sit amet consectetur adispiscing elit, sed do eius- mod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostru</p>
-                <img id="telephone" src="./images/phone.svg" alt="Icone de téléphone"/>
+                <img id="telephone" src="images/phone.svg" alt="Icone de téléphone"/>
                 <span>05 59 20 90 50</span>
             </section>
             <section id = "localisation">
@@ -52,8 +56,8 @@
                     <span>55 AVENUE DE L'AQUITAINE<br>64100 BAYONNE</span>
                 </article>
                 <article>
-                    <img id="loc" src="./images/localisation.jpg" alt="Image localisation"/>                    
-                    <img id="marker" src="./images/marker.svg" alt="Marker"/>
+                    <img id="loc" src="images/localisation.jpg" alt="Image localisation"/>                    
+                    <img id="marker" src="images/marker.svg" alt="Marker"/>
                 </article>
             </section>
 
@@ -61,25 +65,28 @@
                 <div class="swiper-wrapper">
                     
                     <div class="swiper-slide">
-                        <img class="imgSlider" src="./images/photo1.jpg" alt="Photo1"/>
+                        <a data-fancybox="gallery" data-src="images/photo1.jpg">
+                            <img class="imgSlider" src="images/photo1.jpg" alt="Photo1"/>
+                        </a>
                     </div>
                     <div class="swiper-slide">
-                        <img class="imgSlider" src="./images/photo2.jpg" alt="Photo2"/>
+                        <a data-fancybox="gallery" data-src="images/photo2.jpg">
+                            <img class="imgSlider" src="images/photo2.jpg" alt="Photo2"/>
+                        </a>
                     </div>
                     <div class="swiper-slide">
-                        <img class="imgSlider" src="./images/photo3.jpg" alt="Photo3"/>
+                        <a data-fancybox="gallery" data-src="images/photo3.jpg">
+                            <img class="imgSlider" src="images/photo3.jpg" alt="Photo3"/>
+                        </a>
                     </div>
-                    <!--<div class="swiper-slide" style="background-image:url(./images/photo1.jpg)"></div>
-                    <div class="swiper-slide" style="background-image:url(./images/photo2.jpg)"></div>
-                    <div class="swiper-slide" style="background-image:url(./images/photo3.jpg)"></div>-->
                 </div>
                 <div class="swiper-pagination"></div>
                 <!-- If we need navigation buttons -->
                 <div class="swiper-avant">
-                    <img id="chevronGauche" src="./images/chevron.svg" alt="Chevron"/>
+                    <img id="chevronGauche" src="images/chevron.svg" alt="Before"/>
                 </div>
                 <div class="swiper-apres">
-                    <img id="chevronDroite" src="./images/chevron.svg" alt="Chevron"/>
+                    <img id="chevronDroite" src="images/chevron.svg" alt="After"/>
                 </div>
 
                 <!--https://swiperjs.com/ => Pour faire le slider avec les 3 images-->
@@ -147,7 +154,13 @@
                     prevEl: '.swiper-apres',
                 },
             });
-                
+
+        </script>
+
+        <!-- fancyapps pour afficher les images du slider zooméés-->
+        <script>
+            // Image gallery with thumbnails
+
             
         </script>
 
