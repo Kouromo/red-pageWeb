@@ -15,7 +15,7 @@
 }
 
 
-h2{
+h2, #telephone, #adresseText, nav > ul > li > a{
     font-family: 'Permanent Marker';
 }
 
@@ -23,13 +23,89 @@ p{
     font-family: 'Roboto';
 }
 
-/*
-Police Titre : Permanent Marker
-Police Texte : Roboto
+/*Écrans d'ordinateur*/
+@media screen and (min-width: 1024px) {
+    ul{
+        display: inline-flex;
+    }
 
-Couleur 1 : #ed1e79
-Couleur 2 : #6d0063
-*/
+    header nav ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+    }
+
+    nav{
+        margin: 0 200px;
+        padding: 80px 0; /*Taille du header*/
+    }
+
+    #logo{
+        width: 150px;
+        height: 150px;
+        margin: 0 30px;
+    }
+}
+
+/*Écrans de tablette*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+}
+
+/*Ecrans de telephone*/
+@media screen and (max-width: 767px) {
+}
+
+
+/**************Header***********/
+header{
+    width: 100%;
+    height: min-content;
+    background-image: url(./images/texture.png);
+    background-position: center;
+}
+
+/*Mise en forme des liens du navigateur*/
+nav > ul > li > a:not(#navContact){
+    color: black;
+}
+
+nav > ul > li > a{
+    text-decoration: none;
+    font-size: normal;
+}
+
+#navContact{
+    background: linear-gradient(90deg, #ed1e79, #6d0063);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/**************Main************/
+#degrade{
+    background: linear-gradient(90deg, #ed1e79, #6d0063);
+    height: 30px;
+    width: 100%;
+}
+
+/*LOCALISATION*/
+
+#adresse{
+    background-image: url(images/localisation.jpg);
+    background-position: center;
+    /*background-size: cover;*/
+    background-repeat: no-repeat;
+}
+
+#map {
+    width: 100%;
+    height: 400px;
+    background: #d6d6d6;
+    /*Afficher par dessus tout*/
+    z-index: 1;
+}
 
 .swiper {
     width: 20%;
@@ -60,12 +136,4 @@ img{
 #countries {
     width: 90%;
     max-width: 400px;
-}
-
-#map {
-    width: 100%;
-    height: 400px;
-    background: #d6d6d6;
-    /*Afficher par dessus tout*/
-    z-index: 1;
 }

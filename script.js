@@ -1,7 +1,10 @@
+// Procédure qui confirme l'envoi des formulaires
 function envoiMsg() {
     alert("Votre message a bien été envoyé");
 }
 
+
+// Procédures pour afficher les images
 function zoomImage1(){
     Fancybox.show([
         {

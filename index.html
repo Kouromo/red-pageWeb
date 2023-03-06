@@ -32,24 +32,25 @@
                     <li><a href="index.html"><img id="logo" src="images/logo.svg" alt="Logo"/></a></li>
                     <li><a href="#">TEAM</a></li>
                     <li><a href="#localisation">LOCALISATION</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
+                    <li><a href="#contact" id = "navContact">CONTACT</a></li>
                 </ul>
             </nav>
-            <img id="banniere" src="./images/texture.png" alt="banniere" />
         </header>
         <main>
+            <div id = degrade></div>
             <section id = "contact">
                 <h2>HOW TO CONTACT US</h2>
                 <p>rem ipsum dolor sit amet consectetur adispiscing elit, sed do eius- mod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostru</p>
-                <img id="telephone" src="images/phone.svg" alt="Icone de téléphone"/>
-                <span>05 59 20 90 50</span>
+                <img id="logoTel" src="images/phone.svg" alt="Icone de téléphone"/>
+                <span id = "telephone">05 59 20 90 50</span>
             </section>
+
             <section id = "localisation">
-                <article>
+                <article id = "adresse">
                     <h2> HOW TO FIND US</h2>
                     <p>rem ipsum dolor sit amet consectetur adispiscing elit, sed do eius- mod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostru</p>
     
-                    <span>55 AVENUE DE L'AQUITAINE<br>64100 BAYONNE</span>
+                    <span id = adresseText>33 AVENUE DE L'AQUITAINE<br>64100 BAYONNE</span>
                 </article>
                 <article id="map">
                 </article>
@@ -119,106 +120,13 @@
         <script src="https://unpkg.com/@popperjs/core@2"></script>
         <script src="https://unpkg.com/tippy.js@6"></script>
 
+        <!-- JS POST BODY-->
         <script src="postBodyScript.js"></script>;
         
-        <script>
-            tippy('#name', {
-                content: 'Fill with your name',
-            });
-            tippy('#email', {
-                content: 'Fill with your email',
-            });
-            tippy('#message', {
-                content: 'Fill with your message',
-            });
-        </script>
-
-        <!-- Google maps-->
-        <script>
-            function initMap() {
-                const selector = document.getElementById("map")
-                const center = { lat:43.4867854, lng: -1.4641213 }
-                const options = {
-                    center: center,
-                    zoom : 17,
-                }
-                var myLatLng = {lat:43.4867854, lng: -1.4641213};
-                const map = new google.maps.Map(selector, options);
-                var marker = new google.maps.Marker({
-                    position: myLatLng,
-                    title: "Web Agency",
-                    map: map,
-                    icon: {
-                        url: 'images/marker.svg',
-                        scaledSize: new google.maps.Size(50, 50),
-                    }
-                });                
-            }
-        </script>
-
+        <!-- API GOOGLE-->
         <script async
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1I6BUf-xgodgftLv2kYAWQlJpN9PEE_o&callback=initMap">
         </script>
-
-        <!-- Slider -->
-        <script>
-            const swiper = new Swiper('.swiper', {
-                // Optional parameters
-                direction: 'horizontal',
-                loop: true,
-                slidesPerView: 1,
-                centeredSlides: true,
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: '.swiper-apres',
-                    prevEl: '.swiper-avant',
-                },
-            });
-
-        </script>
-
-        <!-- API restcountries pour affichage des pays-->
-        <script>
-            const xhttp = new XMLHttpRequest();
-            const select = document.getElementById("countries");
-        
-            let countries;
-        
-            xhttp.onreadystatechange = function() {
-            console.log('this.status', this.status);
-            if (this.readyState == 4 && this.status == 200) {
-                countries = JSON.parse(xhttp.responseText);
-                countries.sort((a, b) => a.name.common.localeCompare(b.name.common)); // tri par ordre alphabétique
-                assignValues();
-                handleCountryChange();
-            }
-            };
-            xhttp.open("GET", "https://restcountries.com/v3.1/all", true);
-            xhttp.send();
-        
-            function assignValues() {
-            countries.forEach(country => {
-                const option = document.createElement("option");
-                option.value = country.cioc;
-                option.textContent = country.name.common;
-                select.appendChild(option);
-            });
-            }
-        
-            function handleCountryChange() {
-            const countryData = countries.find(
-                country => select.value === country.alpha2Code
-            );
-            flag.style.backgroundImage = `url(${countryData.flag})`;
-            }
-        
-            select.addEventListener("change", handleCountryChange.bind(this));
-        </script>
-  
-  
 
     </body>
 
