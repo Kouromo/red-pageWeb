@@ -46,6 +46,52 @@ p{
         height: 150px;
         margin: 0 30px;
     }
+
+    main{
+        /*Grille composées de deux rangées de deux cases*/
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+
+    }
+
+    #contact{
+        grid-column: 1;
+        grid-row: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+    }
+
+    .swiper{
+        grid-column: 2;
+        grid-row: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #localisation{
+        grid-column: 1;
+        grid-row: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    form{
+        grid-column: 2;
+        grid-row: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
 }
 
 /*Écrans de tablette*/
@@ -83,12 +129,14 @@ nav > ul > li > a{
 }
 
 
-/**************Main************/
 #degrade{
     background: linear-gradient(90deg, #ed1e79, #6d0063);
     height: 30px;
     width: 100%;
 }
+
+/**************Main************/
+
 
 /*LOCALISATION*/
 
