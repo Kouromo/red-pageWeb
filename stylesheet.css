@@ -51,18 +51,12 @@ p{
         /*Grille composées de deux rangées de deux cases*/
         display: grid;
         grid-template-columns: 50% 50%;
-        grid-template-rows: 1fr 1fr;
-
+        grid-template-rows: 400px 1fr;
     }
 
     #contact{
         grid-column: 1;
         grid-row: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: white;
     }
 
     .swiper{
@@ -72,15 +66,12 @@ p{
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        width: 50%;
     }
 
     #localisation{
         grid-column: 1;
         grid-row: 2;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
     }
 
     form{
@@ -137,25 +128,22 @@ nav > ul > li > a{
 
 /**************Main************/
 
-#contact p, #adresse p{
-    width: 50%;
-    margin: 20px 0;
-}
-
 /*CONTACT*/
 
 #logoTel{
-    width: 50px;
-    height: 50px;
-    margin: 0 30px;
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
 }
 
 #numTel{
     display: inline-flex;
+    align-items: center;
+    margin-top: 10px;
 }
 
 #telephone{
-    font-size: 30px;
+    font-size: 25px;
     background: linear-gradient(90deg, #ed1e79, #6d0063);
     background-clip: border-box;
     -webkit-background-clip: text;
@@ -163,40 +151,35 @@ nav > ul > li > a{
 }
 
 #contact{
-    padding: 100px;
+    margin: 10% 20%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
 }
 
-/*LOCALISATION*/
-
-#adresse{
-    background-image: url(images/localisation.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-#map {
-    width: 100%;
-    height: 400px;
-    background: #d6d6d6;
+#contact p{
+    margin: 20px 0;
+    /*taille de 67 caractères*/
+    max-width: 55ch;
+    line-height: 25px;
 }
 
 /*SLIDER*/
-
-
-.swiper-avant, .swiper-apres{
-    width: 30px;
-    height: 30px;
-    z-index: 2;
-    display: flex;
-}
-
 .imgSlider {
-    max-width: 100%;
+    width: 100%;
     height: auto;
 }
 
 #chevronDroite {
     transform: rotate(180deg);
+    background: linear-gradient(90deg, #6d0063, #ed1e79);
+    /* déplacer de 30 pixels sur la gauche*/
+    margin-right: 30px;
+}
+
+#chevronGauche {
+    background: linear-gradient(90deg, #ed1e79, #6d0063);
+    margin-left: 30px;
 }
 
 #countries {
@@ -205,6 +188,53 @@ nav > ul > li > a{
 }
 
 .swiper {
-    width: 800px;
-    height: 300px;
+    width: 100%;
+    height: 100%;
   }
+
+  #chevronGauche, #chevronDroite {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    /*arrière plan dégradé de gauche à droite ed1e79 à 6d0063*/
+    padding: 10px;
+
+  }
+
+/*LOCALISATION*/
+
+#adresse{
+    /*assombrissement de l'image*/
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/localisation.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: none;
+    height: min-content;
+    padding: 20% 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+#map {
+    width: 100%;
+    height: 400px;
+    background: #d6d6d6;
+}
+  /*tous les textes dans #adresses sont blancs*/
+#adresse p , #adresse h2, span{
+    color: white;
+    z-index: 2;
+}
+
+
+#adresse p{
+    margin: 40px 0;
+    max-width: 55ch;
+    /* espacement entre les lignes du paragraphes de 5 pixels*/
+    line-height: 25px;
+} 
+
+/*FORMULAIRE*/
+form{
+    background: linear-gradient(90deg, #ed1e79, #6d0063);
+}
