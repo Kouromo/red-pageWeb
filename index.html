@@ -87,25 +87,24 @@
                 </article>
             </section>
             <form>
-                <div>
+                <div id="titleForm">
                     <h2>DROP US A LIGNE</h2>
                     <p>Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
                 <div id ="questionForms">
                     <label for="countries">Choose your country *</label> <br>
-                    <select id="countries" name="countries" id="countries"></select> <br>
+                    <select id="countries" name="countries" id="countries" onmouseover="changeCouleur('countries')" onmouseout="changeCouleurOut('countries')"></select> <br>
 
                     <label for="name">Name *</label> <br>
-                    <input type="text" id="name" name="name" placeholder="John Doe"> <br>
+                    <input type="text" id="name" name="name" placeholder="John Doe" onmouseover="changeCouleur('name')" onmouseout="changeCouleurOut('name')"> <br>
 
                     <label for="email">Mail address *</label> <br>
-                    <input type="email" id="email" name="email" placeholder="jogndoe@gmail.com"> <br>
+                    <input type="email" id="email" name="email" placeholder="jogndoe@gmail.com" onmouseover="changeCouleur('email')" onmouseout="changeCouleurOut('email')"> <br>
 
                     <label for="message">Message *</label> <br>
-                    <input type="text" id="message" name="message" placeholder="Drop us a line"> <br>
-
-                    <button onclick="envoiMsg()">SEND</button>
+                    <textarea type="text" id="message" name="message" rows="5" placeholder="Drop us a line" onmouseover="changeCouleur('message')" onmouseout="changeCouleurOut('message')"></textarea><br>
                 </div>
+                <button id="boutonForm" onclick="envoiMsg()"><span id ="textColButt">SEND</span></button>
             </form>
         </main>
         <!--PLUGINS-->
@@ -119,7 +118,7 @@
         <script src="https://unpkg.com/tippy.js@6"></script>
 
         <!-- JS POST BODY-->
-        <script src="postBodyScript.js"></script>;
+        <script src="postBodyScript.js"></script>
         
         <!-- API GOOGLE-->
         <script async

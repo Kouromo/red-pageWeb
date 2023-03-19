@@ -73,3 +73,17 @@ function zoomImage3(){
     });
 
 }
+
+
+// Changer la couleur de la bordure du formulaire
+function changeCouleur(id) {
+    document.getElementById(id).style.borderColor = "#ed1e79";
+}
+
+function changeCouleurOut(id) {
+    document.getElementById(id).style.borderColor = "white";
+}
+
+tippy(targets, {
+    theme: 'blackAndWhite',
+  });

@@ -1,14 +1,18 @@
 * {
     margin: 0;
     padding: 0;
+    
 }
 
+
 /*Importation des polices depuis le dossier "polices" */
+/*Titres*/
 @font-face {
     font-family: 'Permanent Marker';
     src: url(./polices/PermanentMarker.ttf) format('truetype');
 }
 
+/*Texte*/
 @font-face {
     font-family: 'Roboto';
     src: url(./polices/Roboto-Regular.ttf) format('truetype');
@@ -19,7 +23,7 @@ h2, #telephone, #adresseText, nav > ul > li > a{
     font-family: 'Permanent Marker';
 }
 
-p{
+p, label{
     font-family: 'Roboto';
 }
 
@@ -52,6 +56,7 @@ p{
         display: grid;
         grid-template-columns: 50% 50%;
         grid-template-rows: 400px 1fr;
+        height: 100%;
     }
 
     #contact{
@@ -77,10 +82,6 @@ p{
     form{
         grid-column: 2;
         grid-row: 2;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
     }
 
 }
@@ -182,24 +183,24 @@ nav > ul > li > a{
     margin-left: 30px;
 }
 
-#countries {
-    width: 90%;
-    max-width: 400px;
-}
-
 .swiper {
     width: 100%;
     height: 100%;
   }
 
-  #chevronGauche, #chevronDroite {
+#chevronGauche, #chevronDroite {
     width: 30px;
     height: 30px;
     border-radius: 50%;
     /*arrière plan dégradé de gauche à droite ed1e79 à 6d0063*/
     padding: 10px;
+}
 
-  }
+.swiper-pagination {
+    --swiper-pagination-color: #ed1e79;
+    --swiper-pagination-bullet-inactive-color: #ffffff;
+    --swiper-pagination-bullet-inactive-opacity: 1;
+}
 
 /*LOCALISATION*/
 
@@ -237,4 +238,111 @@ nav > ul > li > a{
 /*FORMULAIRE*/
 form{
     background: linear-gradient(90deg, #ed1e79, #6d0063);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form h2{
+    color: white;
+    margin: 20px 0;
+}
+
+form p{
+    color: white;
+    max-width: 55ch;
+    line-height: 25px;
+}
+
+#titleForm{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#questionForms label{
+    color: white;
+}
+
+#questionForms input, #questionForms textarea{
+    background: none;
+    border: none;
+    border: 1px solid white;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    /*bords arrondis*/
+    border-radius: 10px;
+    font-family: Roboto;
+    width: 300px;
+    resize : none;
+}
+
+#questionForms input:focus, #questionForms textarea:focus, #countries:focus{
+    outline: none;
+}
+
+
+#questionForms input::placeholder, #questionForms textarea::placeholder{
+    color: #6d0063;
+}
+
+.tippy-box[data-theme~='blackAndWhite'] {
+    background-color: black;
+    color: white;
+}
+
+.tippy-box[data-theme~='blackAndWhite'][data-placement^='top'] > .tippy-arrow::before {
+    border-top-color: black;
+}
+
+#questionsForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#boutonForm{
+    background-color: white;
+    border: solid 1px #6d0063;
+    padding: 15px 20px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    /*bords arrondis*/
+    border-radius: 10px;
+    font-family: Roboto;
+    width: 300px;
+    height: 60px;
+    cursor: pointer;
+}
+
+#textColButt{
+    background: -webkit-linear-gradient(90deg, #ed1e79, #6d0063);
+    background-clip:text;
+    -webkit-background-clip:text;
+    color:transparent;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+#countries{
+    width: 340px;
+    height: 60px;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    padding: 15px 20px 15px 25px;
+    background-color: black;
+    background: none;
+    color: white;
+    font-family: Roboto;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-position-x: 0%;
+    background-position-y: 50%;
 }

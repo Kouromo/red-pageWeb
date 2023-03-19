@@ -2,12 +2,15 @@
 
 tippy('#name', {
   content: 'Fill with your name',
+  theme: 'blackAndWhite',
 });
 tippy('#email', {
   content: 'Fill with your email',
+  theme: 'blackAndWhite',
 });
 tippy('#message', {
   content: 'Fill with your message',
+  theme: 'blackAndWhite',
 });
 
 function loadCountries() {
@@ -50,13 +53,135 @@ function loadCountries() {
 loadCountries();
 
 
+
 // Procédure pour afficher la carte
 function initMap() {
+  var mapStyle = [
+    {
+        "featureType": "administrative",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#0c0b0b"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#f2f2f2"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "all",
+        "stylers": [
+            {
+                "saturation": -100
+            },
+            {
+                "lightness": 45
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#090909"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#d4e4eb"
+            },
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#fef7f7"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#9b7f7f"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "color": "#fef7f7"
+            }
+        ]
+    }
+  ];
+
   const selector = document.getElementById("map")
   const center = { lat: 43.4867854, lng: -1.4641213 }
   const options = {
     center: center,
     zoom: 17,
+    styles: mapStyle,
   }
   var myLatLng = { lat: 43.4867854, lng: -1.4641213 };
   const map = new google.maps.Map(selector, options);
@@ -70,7 +195,6 @@ function initMap() {
     }
   });
 }
-
 
 
 // Slider
