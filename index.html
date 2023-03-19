@@ -42,8 +42,10 @@
             <section id = "contact">
                 <h2>HOW TO CONTACT US</h2>
                 <p>rem ipsum dolor sit amet consectetur adispiscing elit, sed do eius- mod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostru</p>
-                <img id="logoTel" src="images/phone.svg" alt="Icone de téléphone"/>
-                <span id = "telephone">05 59 20 90 50</span>
+                <div id = "numTel">
+                    <img id="logoTel" src="images/phone.svg" alt="Icone de téléphone"/>
+                    <span id = "telephone">05 59 20 90 50</span>
+                </div>
             </section>
 
             <section id = "localisation">
@@ -58,7 +60,7 @@
             </section>
 
             <section class="swiper">
-                <div class="swiper-wrapper">
+                <div class="swiper-wrapper" navigation="true" pagination="true">
                     
                     <div class="swiper-slide">
                         <a onclick="zoomImage1()" data-fancybox="gallery" data-src="images/photo1.jpg">
@@ -76,6 +78,7 @@
                         </a>
                     </div>
                 </div>
+
                 <div class="swiper-pagination"></div>
                 <!-- If we need navigation buttons -->
                 <div class="swiper-avant">
@@ -84,6 +87,8 @@
                 <div class="swiper-apres">
                     <img id="chevronDroite" src="images/chevron.svg" alt="After"/>
                 </div>
+                
+
 
                 <!--https://swiperjs.com/ => Pour faire le slider avec les 3 images-->
                 <!--https://fancyapps.com/docs/ui/fancybox/ => Pour afficher les images du slider zoomées-->

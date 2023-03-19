@@ -89,6 +89,8 @@ function initMap() {
             nextEl: '.swiper-apres',
             prevEl: '.swiper-avant',
         },
+        setWrapperSize: true,
+
     });
 
 

@@ -50,7 +50,7 @@ p{
     main{
         /*Grille composées de deux rangées de deux cases*/
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 50% 50%;
         grid-template-rows: 1fr 1fr;
 
     }
@@ -137,13 +137,40 @@ nav > ul > li > a{
 
 /**************Main************/
 
+#contact p, #adresse p{
+    width: 50%;
+    margin: 20px 0;
+}
+
+/*CONTACT*/
+
+#logoTel{
+    width: 50px;
+    height: 50px;
+    margin: 0 30px;
+}
+
+#numTel{
+    display: inline-flex;
+}
+
+#telephone{
+    font-size: 30px;
+    background: linear-gradient(90deg, #ed1e79, #6d0063);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#contact{
+    padding: 100px;
+}
 
 /*LOCALISATION*/
 
 #adresse{
     background-image: url(images/localisation.jpg);
     background-position: center;
-    /*background-size: cover;*/
     background-repeat: no-repeat;
 }
 
@@ -151,37 +178,33 @@ nav > ul > li > a{
     width: 100%;
     height: 400px;
     background: #d6d6d6;
-    /*Afficher par dessus tout*/
-    z-index: 1;
 }
 
-.swiper {
-    width: 20%;
+/*SLIDER*/
+
+
+.swiper-avant, .swiper-apres{
+    width: 30px;
+    height: 30px;
+    z-index: 2;
+    display: flex;
+}
+
+.imgSlider {
+    max-width: 100%;
     height: auto;
 }
-
-.swiper-button-next,
-.swiper-button-prev {
-  width: 50px;
-  height: 50px;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-}
-
 
 #chevronDroite {
     transform: rotate(180deg);
 }
 
-img{
-    width: auto;
-    height: 200px;
-}
-
-
 #countries {
     width: 90%;
     max-width: 400px;
 }
+
+.swiper {
+    width: 800px;
+    height: 300px;
+  }
