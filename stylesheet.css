@@ -19,7 +19,7 @@
 }
 
 
-h2, #telephone, #adresseText, nav > ul > li > a{
+h2, #telephone, #adresseText, header a{
     font-family: 'Permanent Marker';
 }
 
@@ -33,7 +33,7 @@ p, label{
         display: inline-flex;
     }
 
-    header nav ul {
+    #respOrdinateur ul {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -84,6 +84,37 @@ p, label{
         grid-row: 2;
     }
 
+    #contact{
+        margin: 10% 20%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #adresse{
+        padding: 20% 30%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #contact p, #adresse p{
+        max-width: 55ch;
+    }
+
+    #questionForms input, #questionForms textarea{
+    width: 300px;
+    }
+
+    #countries{
+        width: 340px;
+    }
+
+    #menu{
+        display: none;
+    }
+
+    #respTelephone{
+        display: none;
+    }
 }
 
 /*Écrans de tablette*/
@@ -92,6 +123,46 @@ p, label{
 
 /*Ecrans de telephone*/
 @media screen and (max-width: 767px) {
+    #contact{
+        margin: 15% 10px;
+        text-align: center;
+    }
+
+    #adresse{
+        text-align: center;
+        padding: 15% 10px;
+    }
+
+    #adresse p, #contact p, form{
+        font-size: smaller;
+        max-width: 95%;
+    }
+
+    h2{
+        font-size: 20px;
+    }
+
+    form{
+        padding: 0 30px;
+    }
+
+    #questionForms input, #questionForms textarea, #countries{
+        width: -webkit-fill-available;
+    }
+
+    #logoOnTel{
+        width: 120px;
+        height: 120px;
+    }
+
+    #respOrdinateur{
+        display: none;
+    }
+    
+    aside{
+        display: none;
+    }
+
 }
 
 
@@ -104,11 +175,11 @@ header{
 }
 
 /*Mise en forme des liens du navigateur*/
-nav > ul > li > a:not(#navContact){
+nav a:not(#navContact){
     color: black;
 }
 
-nav > ul > li > a{
+nav a{
     text-decoration: none;
     font-size: normal;
 }
@@ -152,21 +223,18 @@ nav > ul > li > a{
 }
 
 #contact{
-    margin: 10% 20%;
-    display: flex;
-    flex-direction: column;
     background-color: white;
 }
 
 #contact p{
     margin: 20px 0;
     /*taille de 67 caractères*/
-    max-width: 55ch;
     line-height: 25px;
 }
 
 /*SLIDER*/
-.imgSlider {
+
+.imgSlider{
     width: 100%;
     height: auto;
 }
@@ -211,9 +279,6 @@ nav > ul > li > a{
     background-size: cover;
     background-repeat: none;
     height: min-content;
-    padding: 20% 30%;
-    display: flex;
-    flex-direction: column;
 }
 
 #map {
@@ -224,13 +289,11 @@ nav > ul > li > a{
   /*tous les textes dans #adresses sont blancs*/
 #adresse p , #adresse h2, span{
     color: white;
-    z-index: 2;
 }
 
 
 #adresse p{
     margin: 40px 0;
-    max-width: 55ch;
     /* espacement entre les lignes du paragraphes de 5 pixels*/
     line-height: 25px;
 } 
@@ -274,9 +337,9 @@ form p{
     /*bords arrondis*/
     border-radius: 10px;
     font-family: Roboto;
-    width: 300px;
     resize : none;
 }
+
 
 #questionForms input:focus, #questionForms textarea:focus, #countries:focus{
     outline: none;
@@ -328,7 +391,6 @@ form p{
 
 
 #countries{
-    width: 340px;
     height: 60px;
     border: 1px solid white;
     border-radius: 10px;

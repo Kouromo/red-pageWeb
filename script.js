@@ -87,3 +87,12 @@ function changeCouleurOut(id) {
 tippy(targets, {
     theme: 'blackAndWhite',
   });
+
+function afficherMenu(){
+    // si le menu est caché on l'affiche, sinon on le cache
+    if (document.getElementById("menu").style.display == "none") {
+        document.getElementById("menu").style.display = "block";
+    } else {
+        document.getElementById("menu").style.display = "none";
+    }
+}

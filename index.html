@@ -14,26 +14,44 @@
         <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
 
+        <!-- ICONE MENU -->
+        <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+
         <!-- JS -->
         <script src="script.js"></script>
     </head>
     <body>
         <header>
             <nav>
-                <!-- Responsivité mobile -->
                 <!-- Trouver Icône menu 3 barres horizontales-->
-                <!--<div>
-                    <span>MENU</span>
-                </div>-->
-                <ul>
-                    <li><a href="index.html">AGENCY</a></li>
-                    <li><a href="#">WHO ARE WE?</a></li>
-                    <li><a href="#">WORK</a></li>
-                    <li><a href="index.html"><img id="logo" src="images/logo.svg" alt="Logo"/></a></li>
-                    <li><a href="#">TEAM</a></li>
-                    <li><a href="#localisation">LOCALISATION</a></li>
-                    <li><a href="#contact" id = "navContact">CONTACT</a></li>
-                </ul>
+                <div id="respTelephone">
+                    <a href="index.html"><img id="logoOnTel" src="images/logo.svg" alt="Logo"/></a>
+                    <div id="clickMenu" onclick="afficherMenu()">
+                        <i class="fas fa-bars" id="menuBurger"></i>
+                        <h2 id="txtMenu">MENU</h2>
+                    </div>
+                    <aside id ="menu">
+                        <ul>
+                            <li><a href="index.html">AGENCY</a></li>
+                            <li><a href="#">WHO ARE WE?</a></li>
+                            <li><a href="#">WORK</a></li>
+                            <li><a href="#">TEAM</a></li>
+                            <li><a href="#localisation">LOCALISATION</a></li>
+                            <li><a href="#contact" id = "navContact">CONTACT</a></li>
+                        </ul>
+                    </aside>
+                </div>
+                <div id="respOrdinateur">
+                    <ul>
+                        <li><a href="index.html">AGENCY</a></li>
+                        <li><a href="#">WHO ARE WE?</a></li>
+                        <li><a href="#">WORK</a></li>
+                        <li><a href="index.html"><img id="logo" src="images/logo.svg" alt="Logo"/></a></li>
+                        <li><a href="#">TEAM</a></li>
+                        <li><a href="#localisation">LOCALISATION</a></li>
+                        <li><a href="#contact" id = "navContact">CONTACT</a></li>
+                    </ul>
+                </div>
             </nav>
             <div id = degrade></div>
         </header>
