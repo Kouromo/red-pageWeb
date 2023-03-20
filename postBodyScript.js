@@ -12,6 +12,10 @@ tippy('#message', {
   content: 'Fill with your message',
   theme: 'blackAndWhite',
 });
+tippy('#countries', {
+    content: 'Fill with your country',
+    theme: 'blackAndWhite',
+  });
 
 function loadCountries() {
   const xhttp = new XMLHttpRequest();
