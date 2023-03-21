@@ -41,7 +41,7 @@ p, label{
     }
 
     nav{
-        margin: 0 200px;
+        margin: 0 10%;
         padding: 80px 0; /*Taille du header*/
     }
 
@@ -101,7 +101,7 @@ p, label{
     }
 
     #questionForms input, #questionForms textarea{
-    width: 300px;
+        width: 300px;
     }
 
     #countries{
@@ -115,14 +115,15 @@ p, label{
     #respTelephone{
         display: none;
     }
+
+    nav a:not(#navContact){
+        color: black;
+    }
 }
 
-/*Écrans de tablette*/
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-}
 
 /*Ecrans de telephone*/
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1023px) {
     #contact{
         margin: 15% 10px;
         text-align: center;
@@ -159,8 +160,32 @@ p, label{
         display: none;
     }
     
-    aside{
-        display: none;
+    #respTelephone{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 50px;
+        padding-bottom: 20px;
+    }
+
+    #txtMenu{
+        margin-left: 10px;
+    }
+
+    #menu ul {
+        list-style-type: none;
+        padding-top: 20px;
+        padding-left: 5px;
+    }
+
+
+    nav a:not(#navContact){
+        color: white;
+    }
+
+    nav a{
+         transition: 0.3s;
+         font-size: x-large;
     }
 
 }
@@ -174,9 +199,8 @@ header{
     background-position: center;
 }
 
-/*Mise en forme des liens du navigateur*/
-nav a:not(#navContact){
-    color: black;
+nav li{
+    margin: 10px;
 }
 
 nav a{
@@ -196,6 +220,63 @@ nav a{
     background: linear-gradient(90deg, #ed1e79, #6d0063);
     height: 30px;
     width: 100%;
+}
+
+#croix {
+    display: block;
+    position: absolute;
+    right: 0;
+    /*marge supérieure droite de 5 pixels*/
+    top: 0;
+    margin: 5px;
+    cursor: pointer;
+
+}
+
+#croixMenu{
+    font-size: 30px;
+}
+
+aside{
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    /* width: 0; */
+    height: 100%;
+    /* background-color: white; */
+    background-color: black;
+    border-left: #ed1e79 solid 5px;
+    z-index: 2;
+    overflow-x: hidden;
+    transition: 0.5s;
+    /*padding-right de la taille de la moitié de l'écran horizontalement*/
+    padding-right: 25%;
+    
+}
+
+#clickMenu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+#respTelephone i{
+    color: #ed1e79;
+    cursor: pointer;
+}
+
+#menuBurger{
+    font-size: 20px;
+}
+
+#logoMenu{
+    margin-left: 50%;
+    width: 100px;
+    height: 100px;
 }
 
 /**************Main************/

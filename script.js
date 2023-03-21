@@ -89,10 +89,11 @@ tippy(targets, {
   });
 
 function afficherMenu(){
-    // si le menu est caché on l'affiche, sinon on le cache
-    if (document.getElementById("menu").style.display == "none") {
-        document.getElementById("menu").style.display = "block";
-    } else {
-        document.getElementById("menu").style.display = "none";
-    }
+    document.getElementById("menu").style.display = "block";
+    document.getElementById("clickMenu").style.display = "none";
+}
+
+function cacherMenu(){
+    document.getElementById("menu").style.display = "none";
+    document.getElementById("clickMenu").style.display = "flex";
 }

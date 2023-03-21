@@ -23,7 +23,7 @@
     <body>
         <header>
             <nav>
-                <!-- Trouver Icône menu 3 barres horizontales-->
+                <!-- Écran téléphone / Tablette-->
                 <div id="respTelephone">
                     <a href="index.html"><img id="logoOnTel" src="images/logo.svg" alt="Logo"/></a>
                     <div id="clickMenu" onclick="afficherMenu()">
@@ -31,6 +31,9 @@
                         <h2 id="txtMenu">MENU</h2>
                     </div>
                     <aside id ="menu">
+                        <div id="croix" onclick="cacherMenu()">
+                            <i class="fas fa-times" id="croixMenu"></i>
+                        </div>
                         <ul>
                             <li><a href="index.html">AGENCY</a></li>
                             <li><a href="#">WHO ARE WE?</a></li>
@@ -39,8 +42,10 @@
                             <li><a href="#localisation">LOCALISATION</a></li>
                             <li><a href="#contact" id = "navContact">CONTACT</a></li>
                         </ul>
+                        <a href="index.html"><img id="logoMenu" src="images/logo.svg" alt="Logo"/></a>
                     </aside>
                 </div>
+                <!-- Écran Ordinateur -->
                 <div id="respOrdinateur">
                     <ul>
                         <li><a href="index.html">AGENCY</a></li>
