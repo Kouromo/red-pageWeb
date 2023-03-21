@@ -42,7 +42,7 @@ p, label{
 
     nav{
         margin: 0 10%;
-        padding: 80px 0; /*Taille du header*/
+        padding: 80px 0;
     }
 
     #logo{
@@ -52,7 +52,6 @@ p, label{
     }
 
     main{
-        /*Grille composées de deux rangées de deux cases*/
         display: grid;
         grid-template-columns: 50% 50%;
         grid-template-rows: 400px 1fr;
@@ -242,15 +241,12 @@ aside{
     position: fixed;
     top: 0;
     right: 0;
-    /* width: 0; */
     height: 100%;
-    /* background-color: white; */
     background-color: black;
     border-left: #ed1e79 solid 5px;
     z-index: 2;
     overflow-x: hidden;
     transition: 0.5s;
-    /*padding-right de la taille de la moitié de l'écran horizontalement*/
     padding-right: 25%;
     
 }
@@ -323,7 +319,6 @@ aside{
 #chevronDroite {
     transform: rotate(180deg);
     background: linear-gradient(90deg, #6d0063, #ed1e79);
-    /* déplacer de 30 pixels sur la gauche*/
     margin-right: 30px;
 }
 
@@ -341,7 +336,6 @@ aside{
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    /*arrière plan dégradé de gauche à droite ed1e79 à 6d0063*/
     padding: 10px;
 }
 
@@ -367,7 +361,7 @@ aside{
     height: 400px;
     background: #d6d6d6;
 }
-  /*tous les textes dans #adresses sont blancs*/
+
 #adresse p , #adresse h2, span{
     color: white;
 }
@@ -375,7 +369,6 @@ aside{
 
 #adresse p{
     margin: 40px 0;
-    /* espacement entre les lignes du paragraphes de 5 pixels*/
     line-height: 25px;
 } 
 
@@ -415,7 +408,6 @@ form p{
     padding: 15px 20px;
     margin-bottom: 20px;
     margin-top: 10px;
-    /*bords arrondis*/
     border-radius: 10px;
     font-family: Roboto;
     resize : none;
@@ -453,7 +445,6 @@ form p{
     padding: 15px 20px;
     margin-bottom: 30px;
     margin-top: 10px;
-    /*bords arrondis*/
     border-radius: 10px;
     font-family: Roboto;
     width: 300px;
